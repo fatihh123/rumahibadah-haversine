@@ -1,0 +1,15 @@
+catatan
+
+menginstall aplikasi
+
+1. xtrak file project ke folder "htdocs" 
+2. beri nama folder project "dijkstra-hotel"
+3. import database ke server local-nya dengan nama db "djikstra-hotel"
+4. buka browser dan akses project nya dengan url link "http://localhost/dijkstra-hotel"
+5. untuk mengakses halaman admin url "link http://localhost/dijkstra-hotel/login"
+6. masukan akun admin lihat di dalam "tabel user" di databases "dijkstra-hotel"
+7. cara penggunaan aplikasi ada di video demo youtube
+8. untuk akun admin 
+     username : admin
+     password : admin
+9. gunakan xampp yang masih mengadopsi php versi 7 
