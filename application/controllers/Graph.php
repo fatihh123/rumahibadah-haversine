@@ -93,12 +93,13 @@ class Graph extends CI_Controller
 		$datatables = new Datatables(new CodeigniterAdapter);
 		$datatables->query('SELECT graph.id,n1.name as name1,n2.name as name2,distance,time FROM graph INNER JOIN node as n1 ON n1.id = graph.start INNER JOIN node as n2 ON n2.id = graph.end');
 		$datatables->hide('id');
+		$datatables->hide('time');
 		$datatables->edit('distance', function ($data) {
 			return $data['distance'] . ' Kilometer';
 		});
-		$datatables->edit('time', function ($data) {
-			return $data['time'] . ' Menit';
-		});
+		// $datatables->edit('time', function ($data) {
+		// 	return $data['time'] . ' Menit';
+		// });
 		$datatables->add('aksi', function ($data) {
 			return '<button onclick="showModalEditGraph(' . $data['id'] . ')" class="btn btn-primary"><i class="dripicons-document-edit"></i></button>&nbsp;<a href="#" onclick="deleteData(' . $data['id'] . ')" class="btn btn-danger"><i class="dripicons-trash"></i></a>';
 		});
@@ -109,7 +110,7 @@ class Graph extends CI_Controller
 	{
 		$config['upload_path']          = './uploads/';
 		$config['allowed_types']        = 'gif|jpg|png';
-		$config['max_size']             = 100;
+		$config['max_size']             = 500;
 		$config['encrypt_name']             = true;
 
 		$this->load->library('upload', $config);

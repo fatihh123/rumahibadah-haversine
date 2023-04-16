@@ -64,11 +64,11 @@
 								<input type="text" class="form-control" name="distance" id="distance" readonly>
 								<small>Jarak ditampilkan dalam kilometer</small>
 							</div>
-							<div class="form-group mt-2">
+							<!-- <div class="form-group mt-2">
 								<label>Waktu tempuh</label>
 								<input type="text" class="form-control" name="time" id="time">
 								<small>Waktu tempuh dalam menit</small>
-							</div>
+							</div> -->
 						</form>
 					</div>
 					<div class="modal-footer">
@@ -100,7 +100,7 @@
 														<th>Mulai</th>
 														<th>Tujuan</th>
 														<th>Jarak</th>
-														<th>waktu</th>
+														<!-- <th>waktu</th> -->
 														<th>aksi</th>
 													</tr>
 												</thead>

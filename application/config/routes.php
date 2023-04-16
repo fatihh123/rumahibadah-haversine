@@ -5,8 +5,8 @@ $route['login'] = 'Login/index';
 $route['logout'] = 'Logout/logout';
 #admin
 $route['admin/dashboard'] = 'Dashboard';
-$route['admin/hotel'] = 'Objects';
-$route['admin/hotel/add'] = 'Objects/add';
+$route['admin/rumahibadah'] = 'Objects';
+$route['admin/rumahibadah/add'] = 'Objects/add';
 $route['admin/hotel/edit/(:num)'] = 'Objects/edit/$1';
 $route['admin/hotel/delete/(:num)'] = 'Objects/delete/$1';
 $route['admin/hotel/ajax/list'] = 'Objects/ajaxlist';
@@ -32,11 +32,11 @@ $route['admin/user/ajax/list'] = 'User/ajaxlist';
 
 #user
 $route['dashboard'] = 'Dashboard';
-$route['hotel'] = 'Front/hotel';
-$route['hotel/(:num)'] = 'Front/hotel/$1';
-$route['hotel/detail/(:num)'] = 'Front/detailHotel/$1';
+$route['rumahibadah'] = 'Front/hotel';
+$route['rumahibadah/(:num)'] = 'Front/hotel/$1';
+$route['rumahibadah/detail/(:num)'] = 'Front/detailHotel/$1';
 $route['galeri'] = 'Front/galeri';
-$route['djikstra'] = 'Front/djikstra';
+$route['haversine'] = 'Front/djikstra';
 $route['djikstra2'] = 'Front/djikstra2';
 $route['about'] = 'Front/about';
 $route['pedoman'] = 'Front/pedoman';

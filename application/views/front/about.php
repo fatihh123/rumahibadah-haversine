@@ -69,11 +69,11 @@
 									  </div>
 									</div>
 
-										<p class="card-text"><?= NAMA_APLIKASI ?> adalah sebuah algoritma yang dapat menentukan rute perjalan menuju tempat tujuan dengan baik</p>
+										<p class="card-text">Haversine adalah sebuah algoritma yang dapat menentukan rute perjalan menuju tempat tujuan dengan baik</p>
 									</div>
 									
 									<div class="card-footer text-muted">
-										@<?= NAMA_APLIKASI ?>
+										@Haversine
 									</div>
 								</div>
 							</div>

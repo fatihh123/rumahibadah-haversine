@@ -90,13 +90,7 @@
 									</div>
 								</div>
 							<?php } ?>
-							<div class="col-12">
-								<nav aria-label="Page navigation example">
-									<?php
-									echo $this->pagination->create_links();
-									?>
-								</nav>
-							</div>
+							
 						</div>
 
 					</div>

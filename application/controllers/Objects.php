@@ -50,7 +50,7 @@ class Objects extends CI_Controller
 					$_POST['picture'] = $upload['success']['file_name'];
 					$this->NodeModel->add();
 					$this->session->set_flashdata('statusMessage', alert('success', 'Data  berhasil ditambah'));
-					redirect('admin/hotel');
+					redirect('admin/rumahibadah');
 				} else {
 					$this->session->set_flashdata('errorUpload', '<br/><span class="text-danger">' . $upload['error'] . '</span>');
 				}
@@ -84,7 +84,7 @@ class Objects extends CI_Controller
 				if (array_key_exists('success', $upload)) {
 					$_POST['picture'] = $upload['success']['file_name'];
 					$this->NodeModel->edit();
-					redirect('admin/hotel');
+					redirect('admin/rumahibadah');
 					$this->session->set_flashdata('statusMessage', alert('success', 'Data berhasil diperbarui'));
 				} else {
 					$this->session->set_flashdata('errorUpload', '<br/><span class="text-danger">' . $upload['error'] . '</span>');
@@ -93,7 +93,7 @@ class Objects extends CI_Controller
 				$_POST['picture'] = $_POST['old_picture'];
 				$this->NodeModel->edit();
 				$this->session->set_flashdata('statusMessage', alert('success', 'Data  berhasil diperbarui'));
-				redirect('admin/hotel');
+				redirect('admin/rumahibadah');
 			}
 		}
 
@@ -115,7 +115,7 @@ class Objects extends CI_Controller
 	{
 		$this->NodeModel->delete($id);
 		$this->session->set_flashdata('statusMessage', alert('success', 'Data gunung berhasil dihapus'));
-		redirect('admin/hotel');
+		redirect('admin/rumahibadah');
 	}
 
 
@@ -150,7 +150,7 @@ class Objects extends CI_Controller
 	{
 		$config['upload_path']          = './uploads/';
 		$config['allowed_types']        = 'gif|jpg|png';
-		$config['max_size']             = 100;
+		$config['max_size']             = 340;
 		$config['encrypt_name']             = true;
 
 		$this->load->library('upload', $config);

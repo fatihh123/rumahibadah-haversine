@@ -17,7 +17,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="<?= site_url('admin/hotel') ?>" class="waves-effect">
+								<a href="<?= site_url('admin/rumahibadah') ?>" class="waves-effect">
 									<i class="mdi mdi-map-marker-radius-outline mdi-18px"></i>
 									<span>Data Tempat Ibadah</span>
 								</a>
@@ -60,7 +60,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="<?= site_url('hotel') ?>" class="waves-effect">
+								<a href="<?= site_url('rumahibadah') ?>" class="waves-effect">
 									<i class="mdi mdi-map-marker-radius-outline mdi-18px"></i>
 									<span>Daftar Tempat Ibadah</span>
 								</a>
@@ -72,7 +72,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="<?= site_url('djikstra') ?>" class="waves-effect">
+								<a href="<?= site_url('haversine') ?>" class="waves-effect">
 									<i class="mdi mdi-map-marker-path mdi-18px"></i>
 									<span>Pencarian Rute</span>
 								</a>

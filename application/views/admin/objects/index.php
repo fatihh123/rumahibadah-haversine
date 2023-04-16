@@ -33,7 +33,7 @@
 							<div class="col-lg-6">
 								<div class="card">
 									<div class="card-body">
-										<a href="<?= site_url('admin/hotel/add') ?>" class="btn btn-primary mb-3">Tambah Titik Tempat Ibadah</a>
+										<a href="<?= site_url('admin/rumahibadah/add') ?>" class="btn btn-primary mb-3">Tambah Titik Tempat Ibadah</a>
 										<div class="p-0 table-responsive">
 											<p>Berikut adalah data tempat ibadah yang terdaftar.</p>
 											<?= $this->session->flashdata('statusMessage') ?>

@@ -34,7 +34,7 @@
 										<div class="p-0">
 											<p>Berikut adalah form data tempat ibadah. silahkan lengkapi data-data dibawah ini dengan lengkap dan benar</p>
 											<hr />
-											<form action="<?= site_url('admin/hotel/add') ?>" method="POST" enctype="multipart/form-data">
+											<form action="<?= site_url('admin/rumahibadah/add') ?>" method="POST" enctype="multipart/form-data">
 												<div class="form-group">
 													<label>Nama tempat ibadah</label>
 													<input type="text" name="name" class="form-control" value="<?= set_value('name') ?>">
@@ -64,7 +64,7 @@
 												</div>
 
 												<div class="form-group mt-3">
-													<a href="<?= site_url('admin/hotel') ?>" class="btn btn-light">Kembali</a>
+													<a href="<?= site_url('admin/rumahibadah') ?>" class="btn btn-light">Kembali</a>
 													<button class="btn btn-primary">Simpan</button>
 												</div>
 

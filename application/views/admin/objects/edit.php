@@ -34,7 +34,7 @@
 										<div class="p-0">
 											<p>Berikut adalah form data tempat ibadah. silahkan lengkapi data-data dibawah ini dengan lengkap dan benar</p>
 											<hr />
-											<form action="<?= site_url('admin/hotel/edit/' . $rsRow->id) ?>" method="POST" enctype="multipart/form-data">
+											<form action="<?= site_url('admin/rumahibadah/edit/' . $rsRow->id) ?>" method="POST" enctype="multipart/form-data">
 												<input type="hidden" name="id" value="<?= $rsRow->id ?>">
 												<div class="form-group">
 													<label>tempat ibadah</label>

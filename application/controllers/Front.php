@@ -23,7 +23,7 @@ class Front extends CI_Controller
 		$this->load->library('pagination');
 		$config['base_url'] = site_url() . 'gunung/';
 		$config['total_rows'] = $jumlah_data;
-		$config['per_page'] = 10;
+		$config['per_page'] = 50;
 		// Membuat Style pagination untuk BootStrap v4
 		$config['first_link']       = 'Awal';
 		$config['last_link']        = 'Akhir';
@@ -74,7 +74,7 @@ class Front extends CI_Controller
 		$this->load->library('pagination');
 		$config['base_url'] = site_url() . 'galeri/';
 		$config['total_rows'] = $jumlah_data;
-		$config['per_page'] = 10;
+		$config['per_page'] = 50;
 		// Membuat Style pagination untuk BootStrap v4
 		$config['first_link']       = 'Awal';
 		$config['last_link']        = 'Akhir';
