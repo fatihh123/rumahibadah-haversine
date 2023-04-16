@@ -33,29 +33,29 @@
 										Cara Penggunaan Aplikasi
 									</div>
 									<div class="card-body">
-										<h5 class="card-title"> Aplikasi Pencarian Rute Terpendek <h5>
+										<h5 class="card-title"> Aplikasi Pemetaan Rumah Ibadah <h5>
 											<p>
-											Aplikasi ini di rancang hanya untuk mencari lokasi destinasi yang di tuju. Aplikasi ini merepkan algoritma Haversine sebagai penentuan rute yang di lalui.
+											Aplikasi ini di rancang hanya untuk mencari lokasi yang di tuju. Aplikasi ini merepkan algoritma Haversine untuk menghitung jarak antara rumah ibadah dengan lokasi pengguna.
 									<h2>Langkah Awal</h2>
 
 									<div class="card" style="width: 50rem;">
-									  <img src="<?= base_url() ?>assets/tutor/1.png " class="card-img-top" alt="...">
+									  <img src="<?= base_url() ?>assets/tutor/1.jpg " class="card-img-top" alt="...">
 									  <div class="card-body">
-									    <p class="card-text">Tahap awal dala melakukan pencarian adalah klik menu pencarian kemudin tentukan tujuan </p>
+									    <p class="card-text">Tahap awal adalah melakukan pencarian pada klik menu pencarian rute kemudian tentukan tujuan. </p>
 									  </div>
 									</div>
 
 									<h2>Langkah Ke 2</h2>
 									<div class="card" style="width: 50rem;">
-									  <img src="<?= base_url() ?>assets/tutor/2.png " class="card-img-top" alt="...">
+									  <img src="<?= base_url() ?>assets/tutor/2.jpg " class="card-img-top" alt="...">
 									  <div class="card-body">
-									    <p class="card-text">Tahap ke 2 adalah menentukan titik kordinat awal perjalan. pada aplikasi kali ini untuk titik awal sudah di tentukan jadi silahka pilih titik awal yg telah di sedikan.</p>
+									    <p class="card-text">Tahap ke 2 adalah menentukan titik kordinat awal perjalan ditahapan bertepatan di Kelurahan Kranji.</p>
 									  </div>
 									</div>
 
 									<h2>Langkah ke 3</h2>
 									<div class="card" style="width: 50rem;">
-									  <img src="<?= base_url() ?>assets/tutor/3.png " class="card-img-top" alt="...">
+									  <img src="<?= base_url() ?>assets/tutor/3.jpg " class="card-img-top" alt="...">
 									  <div class="card-body">
 									    <p class="card-text">Tahap ke 3 menentukan lokasi tujuan. jika sudah maka dapat menentukan atau menarik garis jalur untuk tombol membuat garis berda di sebelah kanan atas. klik dari awal kordinat yg di lambangkan marker warna merah dan biru untuk tujuan. tarik garis merah ke titik marker biru selanjutnya tap</p>
 									  </div>
@@ -63,17 +63,13 @@
 
 									<h2>Langkah ke 4</h2>
 									<div class="card" style="width: 50rem;">
-									  <img src="<?= base_url() ?>assets/tutor/4.png " class="card-img-top" alt="...">
+									  <img src="<?= base_url() ?>assets/tutor/4.jpg " class="card-img-top" alt="...">
 									  <div class="card-body">
 									    <p class="card-text">Tahap 4 dari hasil penarikann garis akan terlihat jalur rute perjalan dan jumlah jarak dan waktu tempuh.</p>
 									  </div>
 									</div>
-
-										<p class="card-text">Haversine adalah sebuah algoritma yang dapat menentukan rute perjalan menuju tempat tujuan dengan baik</p>
-									</div>
-									
 									<div class="card-footer text-muted">
-										@Haversine
+										@Pemetaan Rumah Ibadah
 									</div>
 								</div>
 							</div>
