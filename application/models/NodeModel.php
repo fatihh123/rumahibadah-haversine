@@ -88,6 +88,7 @@ class NodeModel extends CI_Model
 	public function getNodeData()
 	{
 		return $this->db->get_where($this->tb_, ['type' => '-'])->result();
+		
 	}
 	/**
 	 * getNodeData
@@ -97,6 +98,8 @@ class NodeModel extends CI_Model
 	public function getData()
 	{
 		return $this->db->get($this->tb_,)->result();
+		return $this->db->where('id', $id)->get($this->tb_)->result();
+		
 	}
 
 	/**
