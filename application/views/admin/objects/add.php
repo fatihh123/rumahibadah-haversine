@@ -25,18 +25,18 @@
 					<div class="page-content-wrapper">
 						<div class="mt-3">
 
-							<h3 class=""><strong>Tambah  Tempat Ibadah </strong></h3>
+							<h3 class=""><strong>Tambah  Rumah Ibadah </strong></h3>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="card">
 									<div class="card-body">
 										<div class="p-0">
-											<p>Berikut adalah form data tempat ibadah. silahkan lengkapi data-data dibawah ini dengan lengkap dan benar</p>
+											<p>Berikut adalah form data Rumah ibadah. silahkan lengkapi data-data dibawah ini dengan lengkap dan benar</p>
 											<hr />
 											<form action="<?= site_url('admin/rumahibadah/add') ?>" method="POST" enctype="multipart/form-data">
 												<div class="form-group">
-													<label>Nama tempat ibadah</label>
+													<label>Nama Rumah ibadah</label>
 													<input type="text" name="name" class="form-control" value="<?= set_value('name') ?>">
 													<?= form_error('name') ?>
 												</div>
@@ -102,7 +102,7 @@
 		var map = new mapboxgl.Map({
 			container: 'map', // container id
 			style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-			center: [122.514900, -3.972201], // starting position [lng, lat]
+			center: [106.97161383372077, -6.224593576068031], // starting position [lng, lat]
 			zoom: 10, // starting zoom
 			logoPosition: 'top-right',
 		});

@@ -25,19 +25,19 @@
 					<div class="page-content-wrapper">
 						<div class="mt-3">
 
-							<h3 class=""><strong>Edit <?= $title ?></strong></h3>
+							<h3 class=""><strong>Edit Rumah Ibadah</strong></h3>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="card">
 									<div class="card-body">
 										<div class="p-0">
-											<p>Berikut adalah form data tempat ibadah. silahkan lengkapi data-data dibawah ini dengan lengkap dan benar</p>
+											<p>Berikut adalah form data Rumah ibadah. silahkan lengkapi data-data dibawah ini dengan lengkap dan benar</p>
 											<hr />
 											<form action="<?= site_url('admin/rumahibadah/edit/' . $rsRow->id) ?>" method="POST" enctype="multipart/form-data">
 												<input type="hidden" name="id" value="<?= $rsRow->id ?>">
 												<div class="form-group">
-													<label>tempat ibadah</label>
+													<label>Rumah ibadah</label>
 													<input type="text" name="name" class="form-control" value="<?= $rsRow->name ?>">
 													<?= form_error('name') ?>
 												</div>
@@ -68,7 +68,7 @@
 												</div>
 
 												<div class="form-group mt-3">
-													<a href="<?= site_url('admin/rs') ?>" class="btn btn-light">Kembali</a>
+													<a href="<?= site_url('admin/rumahibadah') ?>" class="btn btn-light">Kembali</a>
 													<button class="btn btn-primary">Simpan</button>
 												</div>
 

@@ -37,7 +37,7 @@ class Objects extends CI_Controller
 	public function add()
 	{
 
-		$this->form_validation->set_rules('name', 'Nama Gunung', 'required', ['required' => '%s tidak boleh kosong ']);
+		$this->form_validation->set_rules('name', 'Nama Rumah Ibadah', 'required', ['required' => '%s tidak boleh kosong ']);
 		$this->form_validation->set_rules('lat', 'Latitude', 'required', ['required' => '%s tidak boleh kosong ']);
 		$this->form_validation->set_rules('lng', 'Longitude', 'required', ['required' => '%s tidak boleh kosong ']);
 
@@ -55,7 +55,7 @@ class Objects extends CI_Controller
 					$this->session->set_flashdata('errorUpload', '<br/><span class="text-danger">' . $upload['error'] . '</span>');
 				}
 			} else {
-				$this->session->set_flashdata('errorUpload', '<br/><span class="text-danger">Gambar RS tidak boleh kosong !</span>');
+				$this->session->set_flashdata('errorUpload', '<br/><span class="text-danger">Gambar tidak boleh kosong !</span>');
 			}
 		}
 
@@ -92,7 +92,7 @@ class Objects extends CI_Controller
 			} else {
 				$_POST['picture'] = $_POST['old_picture'];
 				$this->NodeModel->edit();
-				$this->session->set_flashdata('statusMessage', alert('success', 'Data  berhasil diperbarui'));
+				$this->session->set_flashdata('statusMessage', alert('success', 'Data berhasil diperbarui'));
 				redirect('admin/rumahibadah');
 			}
 		}
@@ -114,7 +114,7 @@ class Objects extends CI_Controller
 	public function delete($id)
 	{
 		$this->NodeModel->delete($id);
-		$this->session->set_flashdata('statusMessage', alert('success', 'Data gunung berhasil dihapus'));
+		$this->session->set_flashdata('statusMessage', alert('success', 'Data rumah ibadah`berhasil dihapus'));
 		redirect('admin/rumahibadah');
 	}
 
@@ -141,7 +141,7 @@ class Objects extends CI_Controller
 		$datatables->query('SELECT id,name,lat,lng FROM node WHERE type = "object"');
 		$datatables->hide('id');
 		$datatables->add('aksi', function ($data) {
-			return '<a href="' . site_url('admin/hotel/edit/' . $data['id']) . '" class="btn btn-primary"><i class="dripicons-document-edit"></i></a>&nbsp;<a href="#" onclick="deleteData(' . $data['id'] . ')" class="btn btn-danger"><i class="dripicons-trash"></i></a>';
+			return '<a href="' . site_url('admin/rumahibadah/edit/' . $data['id']) . '" class="btn btn-primary"><i class="dripicons-document-edit"></i></a>&nbsp;<a href="#" onclick="deleteData(' . $data['id'] . ')" class="btn btn-danger"><i class="dripicons-trash"></i></a>';
 		});
 		echo $datatables->generate();
 	}

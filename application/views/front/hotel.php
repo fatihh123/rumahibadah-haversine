@@ -23,7 +23,7 @@
 				<div class="container-fluid">
 					<div class="page-content-wrapper">
 						<div class="mt-3">
-							<h3 class=""><strong>Info Tempat Ibadah	<strong></h3>
+							<h3 class=""><strong>Info Rumah Ibadah	<strong></h3>
 						</div>
 
 

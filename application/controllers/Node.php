@@ -74,7 +74,7 @@ class Node extends CI_Controller
 			$_POST['desc'] = '-';
 			$_POST['picture'] = '-';
 			$this->NodeModel->edit();
-			$this->session->set_flashdata('statusMessage', alert('success', 'Data RS Rujukan berhasil diperbarui'));
+			$this->session->set_flashdata('statusMessage', alert('success', 'Data berhasil diperbarui'));
 			redirect('admin/node');
 		}
 
@@ -95,7 +95,7 @@ class Node extends CI_Controller
 	public function delete($id)
 	{
 		$this->NodeModel->delete($id);
-		$this->session->set_flashdata('statusMessage', alert('success', 'Data RS Rujukan berhasil dihapus'));
+		$this->session->set_flashdata('statusMessage', alert('success', 'Data berhasil dihapus'));
 		redirect('admin/node');
 	}
 

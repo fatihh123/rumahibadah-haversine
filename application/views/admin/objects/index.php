@@ -27,21 +27,21 @@
 				<div class="container-fluid">
 					<div class="page-content-wrapper">
 						<div class="mt-3">
-							<h3 class=""><strong>Tempat Ibadah </strong></h3>
+							<h3 class=""><strong>Rumah Ibadah </strong></h3>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="card">
 									<div class="card-body">
-										<a href="<?= site_url('admin/rumahibadah/add') ?>" class="btn btn-primary mb-3">Tambah Titik Tempat Ibadah</a>
+										<a href="<?= site_url('admin/rumahibadah/add') ?>" class="btn btn-primary mb-3">Tambah Titik Rumah Ibadah</a>
 										<div class="p-0 table-responsive">
-											<p>Berikut adalah data tempat ibadah yang terdaftar.</p>
+											<p>Berikut adalah data Rumah ibadah yang terdaftar.</p>
 											<?= $this->session->flashdata('statusMessage') ?>
 											<hr />
 											<table id="datatable" class="table table-sm table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 												<thead>
 													<tr>
-														<th>Tempat Ibadah</th>
+														<th>Rumah Ibadah</th>
 														<th>lat</th>
 														<th>lng</th>
 														<th>aksi</th>

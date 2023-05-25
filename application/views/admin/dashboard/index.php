@@ -36,7 +36,7 @@
 											<div class="d-flex justify-content-between">
 												<div>
 													<h5 class="text-muted">Total</h5>
-													<h4><strong>Tempat Ibadah </strong></h4>
+													<h4><strong>Rumah Ibadah </strong></h4>
 												</div>
 												<h1 class=""><span class=""><?= $countRS ?></span> <span class="text-muted h3"></span></h1>
 											</div>

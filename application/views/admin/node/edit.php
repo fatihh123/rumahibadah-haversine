@@ -55,7 +55,7 @@
 												</div>
 
 												<div class="form-group mt-3">
-													<a href="<?= site_url('admin/rs') ?>" class="btn btn-light">Kembali</a>
+													<a href="<?= site_url('admin/node') ?>" class="btn btn-light">Kembali</a>
 													<button class="btn btn-primary">Simpan</button>
 												</div>
 
