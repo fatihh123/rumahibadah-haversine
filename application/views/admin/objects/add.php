@@ -46,7 +46,7 @@
 													<textarea class="form-control" name="desc" rows="6" placeholder=""><?= set_value('desc') ?></textarea>
 												</div>
 
-												<div class="row">
+												<!-- <div class="row">
 													<div class="col-6"><label>Latitude</label>
 														<input type="text" id="lat" name="lat" value="<?= set_value('lat') ?>" class="form-control">
 														<?= form_error('lat') ?>
@@ -55,7 +55,24 @@
 														<input type="text" id="lng" name="lng" value="<?= set_value('lng') ?>" class="form-control">
 														<?= form_error('lng') ?>
 													</div>
-												</div>
+												</div> -->
+
+												<!-- Ambil node otomatis -->
+
+												<br />
+												<div class='form-group'>
+                   									 <input type='button' value='Get Location' onclick='getLocationConstant()' />
+                 								 </div>	
+
+                 								 <div class='form-group'>
+                    								<label>Latitude</label>
+                    								<input class='form-control'  name='lat' type='text' id='Latitude' value="<?= set_value('lat') ?>" readonly >
+                  								</div>				
+                							 	 <div class='form-group'>
+                							  	  <label>Longitude</label>
+                							  	  <input class='form-control'  name='lng' type='text' id='Longitude' value="<?= set_value('lng') ?>" readonly>
+                							 	 </div>
+
 
 												<div class="form-group mt-2">
 													<label>Image</label>
@@ -151,8 +168,35 @@
 
 		});
 		</script>
-		
 
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+
+		
+		<!-- ambil node secara otomatis -->
+		<script type="text/javascript">
+			function getLocationConstant() {
+					if (navigator.geolocation) {
+							navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+					} else {
+							alert("Your browser or device doesn't support Geolocation");
+					}
+			}
+
+			// If we have a successful location update
+			function onGeoSuccess(event) {
+					document.getElementById("Latitude").value = event.coords.latitude;
+					document.getElementById("Longitude").value = event.coords.longitude;
+					document.getElementById("Position1").value = event.coords.latitude + ", " + event.coords.longitude;
+
+			}
+
+			// If something has gone wrong with the geolocation request
+			function onGeoError(event) {
+					alert("Error code " + event.code + ". " + event.message);
+			}
+		</script>	
+		<!-- ambil node secara otomatis -->
 
 </body>
 
