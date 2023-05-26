@@ -63,6 +63,8 @@
 													<?= $this->session->userdata('errorUpload') ?>
 												</div>
 
+												
+
 												<div class="form-group mt-3">
 													<a href="<?= site_url('admin/rumahibadah') ?>" class="btn btn-light">Kembali</a>
 													<button class="btn btn-primary">Simpan</button>
@@ -148,7 +150,10 @@
 			}
 
 		});
-	</script>
+		</script>
+		
+
+
 </body>
 
 </html>
