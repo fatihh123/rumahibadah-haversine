@@ -111,7 +111,7 @@ video {
 														<!-- Here we stream video from the webcam -->
 														<video id="video" playsinline autoplay alt="Webcam video stream"></video>
 														<h4>
-															Carema webcam
+															webcam
 															<button class="btn btn-primary" id="btnCapture">Ambil foto</button>
 														</h4>
 														</div>
