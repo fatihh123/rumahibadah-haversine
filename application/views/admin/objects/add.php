@@ -87,37 +87,18 @@ video {
                 							  	  <input class='form-control'  name='lng' type='text' id='Longitude' value="<?= set_value('lng') ?>" readonly>
                 							 	 </div>
 
-												<h5>Image</h5>
-												<div class="form-group mt-2">													
-													<canvas id="canvas" width="475" height="475" alt="Canvas image" name="userfile"></canvas>
-												
-												</input>
-													<!-- Webcam video snapshot -->
+												  <div class="form-group mt-2">
+													<label>Image</label>
+													<input type="file" name="userfile" accept="image/*" capture=" >
 													<?= $this->session->userdata('errorUpload') ?>
 												</div>
-<div class="form-group mt-3">
+												<div class="form-group mt-3">
 													<a href="<?= site_url('admin/rumahibadah') ?>" class="btn btn-light">Kembali</a>
 													<button class="btn btn-primary">Simpan</button>
 												</div>
 
 											</form>
 
-
-
-											<!-- Percobaan -->
-											<br>
-											<div class="row">
-														<div class="col-lg-6">
-														<!-- Here we stream video from the webcam -->
-														<video id="video" playsinline autoplay alt="Webcam video stream"></video>
-														<h4>
-															webcam
-															<button class="btn btn-primary" id="btnCapture">Ambil foto</button>
-														</h4>
-														</div>
-
-														
-  													</div>
 
 
 										</div>
@@ -229,73 +210,6 @@ video {
 			}
 		</script>	
 		
-			<!-- Webcam -->
-		<script>
-const video = document.querySelector("#video");
-
-// Basic settings for the video to get from Webcam
-const constraints = {
-  audio: false,
-  video: {
-    width: 300,
-    height: 300
-  }
-};
-
-// This condition will ask permission to user for Webcam access
-if (navigator.mediaDevices.getUserMedia) {
-  navigator.mediaDevices.getUserMedia(constraints)
-    .then(function(stream) {
-      video.srcObject = stream;
-    })
-    .catch(function(err0r) {
-      console.log("Something went wrong!");
-    });
-}
-
-function stop(e) {
-  const stream = video.srcObject;
-  const tracks = stream.getTracks();
-
-  for (let i = 0; i < tracks.length; i++) {
-    const track = tracks[i];
-    track.stop();
-  }
-  video.srcObject = null;
-}
-
-
-// Below code to capture image from Video tag (Webcam streaming)
-const btnCapture = document.querySelector("#btnCapture");
-const canvas = document.getElementById('canvas');
-
-btnCapture.addEventListener('click', function() {
-  const context = canvas.getContext('2d');
-  // Capture the image into canvas from Webcam streaming Video element
-  context.drawImage(video, 0, 0);
-});
-
-// Upload image to server - ajax call - with the help of base64 data as a parameter
-const btnSave = document.querySelector("#btnSave");
-
-btnSave.addEventListener('click', async function() {
-  // Below new canvas to generate flip/mirror image from existing canvas
-  const destinationCanvas = document.createElement("canvas");
-  const destCtx = destinationCanvas.getContext('2d');
-
-  destinationCanvas.height = 300;
-  destinationCanvas.width = 300;
-
-  destCtx.translate(video.videoWidth, 0);
-  destCtx.scale(-1, 1);
-  destCtx.drawImage(document.getElementById("canvas"), 0, 0);
-
-  // Get base64 data to send to server for upload
-//   let imagebase64data = destinationCanvas.toDataURL("image/png");
-//   imagebase64data = imagebase64data.replace('data:image/png;base64,', '');
-
-});
-		</script>
 
 </body>
 
