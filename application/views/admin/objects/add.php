@@ -48,7 +48,7 @@ video {
 										<div class="p-0">
 											<p>Berikut adalah form data Rumah ibadah. silahkan lengkapi data-data dibawah ini dengan lengkap dan benar</p>
 											<hr />
-											<form action="<?= site_url('admin/rumahibadah/add') ?>" method="POST" enctype="multipart/form-data">
+											<form action="<?= site_url('admin/rumahibadah/add') ?>" method="POST" enctype="multipart/form-data"  onsubmit="return validateForm();">
 												<div class="form-group">
 													<label>Nama Rumah ibadah</label>
 													<input type="text" name="name" class="form-control" value="<?= set_value('name') ?>">
@@ -88,8 +88,12 @@ video {
                 							 	 </div>
 
 												  <div class="form-group mt-2">
-													<label>Image</label>
-													<input type="file" name="userfile" accept="image/*" capture=" >
+												  <label for="userfile">Pilih Gambar</label>
+												<input type="file" name="userfile" id="userfile" accept="image/*" style="display:none;" >
+
+												<input type="hidden" id="imageData" name="imageData">
+
+													
 													<?= $this->session->userdata('errorUpload') ?>
 												</div>
 												<div class="form-group mt-3">
@@ -98,6 +102,12 @@ video {
 												</div>
 
 											</form>
+
+											<button type="button" id="capture">Capture</button>
+											<canvas id="canvas" width="400" height="300"></canvas>
+											<video id="video" width="400" height="300" autoplay></video>
+
+											
 
 
 
@@ -210,6 +220,67 @@ video {
 			}
 		</script>	
 		
+		<script>
+// Dapatkan elemen video, tombol capture, dan elemen canvas
+const video = document.getElementById('video');
+const captureButton = document.getElementById('capture');
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
+const fileInput = document.getElementById('userfile');
+
+// Fungsi untuk mengambil gambar dari video dan menampilkannya di elemen canvas
+function captureImage() {
+  // Gambar video ke elemen canvas
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  // Ubah gambar ke data URL
+  const imageData = canvas.toDataURL('uploads/png');
+
+   // Buat objek Blob dari data gambar
+   const blob = dataURItoBlob(imageData);
+
+// Buat objek File dari objek Blob
+const file = new File([blob], 'image.png', { type: 'uploads/png' });
+
+// Buat objek FormData
+const formData = new FormData();
+formData.append('userfile', file); // Masukkan file ke FormData
+}
+
+// Periksa apakah browser mendukung getUserMedia untuk mengakses webcam
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  // Izinkan akses ke video dari webcam
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      // Setel objek stream sebagai sumber video
+      video.srcObject = stream;
+    })
+    .catch(function (error) {
+      console.log('Error accessing webcam:', error);
+    });
+
+  // Tambahkan event listener untuk tombol capture
+  captureButton.addEventListener('click', captureImage);
+} else {
+  console.log('getUserMedia is not supported in this browser.');
+}
+
+// Fungsi utilitas untuk mengubah data URL menjadi objek File
+function dataURLtoFile(dataURL, filename) {
+  const arr = dataURL.split(',');
+  const mime = arr[0].match(/:(.*?);/)[1];
+  const bstr = atob(arr[1]);
+  let n = bstr.length;
+  const u8arr = new Uint8Array(n);
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n);
+  }
+  return new File([u8arr], filename, { type: mime });
+}
+
+
+
+		</script>
 
 </body>
 
