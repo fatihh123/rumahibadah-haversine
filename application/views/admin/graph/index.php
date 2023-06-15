@@ -83,7 +83,7 @@
 				<div class="container-fluid">
 					<div class="page-content-wrapper">
 						<div class="mt-3">
-							<h3 class=""><strong>Gaprh Jalur </strong></h3>
+							<h3 class=""><strong>Graph Jalur </strong></h3>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
