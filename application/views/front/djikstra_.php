@@ -190,7 +190,7 @@
 						<img src="<?= base_url('uploads/') ?>${i.picture}" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">${i.name}</h5>
-							<a href="<?= site_url('hotel/detail/') ?>${i.id}" class="btn btn-primary">Lihat detail</a>
+							<a href="<?= site_url('rumahibadah/detail/') ?>${i.id}" class="btn btn-primary">Lihat detail</a>
 						</div>
 						</div>
 						`)) // add popup

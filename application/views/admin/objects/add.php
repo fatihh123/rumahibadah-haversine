@@ -88,14 +88,10 @@ video {
                 							 	 </div>
 
 												  <div class="form-group mt-2">
-												  <label for="userfile">Pilih Gambar</label>
-												<input type="file" name="userfile" id="userfile" accept="image/*" style="display:none;" >
-
-												<input type="hidden" id="imageData" name="imageData">
-
-													
-													<?= $this->session->userdata('errorUpload') ?>
-												</div>
+    <label for="capturedImage">Capture Image</label>
+    
+    <input type="file" name="capturedImage" id="capturedImage" style="display: none;">
+  </div>
 												<div class="form-group mt-3">
 													<a href="<?= site_url('admin/rumahibadah') ?>" class="btn btn-light">Kembali</a>
 													<button class="btn btn-primary">Simpan</button>
@@ -228,24 +224,29 @@ const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 const fileInput = document.getElementById('userfile');
 
-// Fungsi untuk mengambil gambar dari video dan menampilkannya di elemen canvas
 function captureImage() {
   // Gambar video ke elemen canvas
   context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
   // Ubah gambar ke data URL
-  const imageData = canvas.toDataURL('uploads/png');
+  const imageData = canvas.toDataURL('image/png');
 
-   // Buat objek Blob dari data gambar
-   const blob = dataURItoBlob(imageData);
+  // Buat objek Blob dari data gambar
+  const blob = dataURItoBlob(imageData);
 
-// Buat objek File dari objek Blob
-const file = new File([blob], 'image.png', { type: 'uploads/png' });
+  // Buat objek File dari objek Blob
+  const file = new File([blob], 'image.png', { type: 'image/png' });
 
-// Buat objek FormData
-const formData = new FormData();
-formData.append('userfile', file); // Masukkan file ke FormData
+  // Simpan file dalam elemen input file
+  const capturedImageInput = document.getElementById('capturedImage');
+  capturedImageInput.files = [file];
 }
+
+// ...
+
+// Tambahkan event listener untuk tombol capture
+captureButton.addEventListener('click', captureImage);
+
 
 // Periksa apakah browser mendukung getUserMedia untuk mengakses webcam
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {

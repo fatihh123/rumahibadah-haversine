@@ -80,7 +80,7 @@ class Objects extends CI_Controller
 			if ($_FILES['userfile']['name'] != '') {
 				$upload = $this->upload();
 				if (array_key_exists('success', $upload)) {
-					// $_POST['picture'] = $upload['success']['file_name'];
+					$_POST['picture'] = $upload['success']['file_name'];
 					$this->NodeModel->edit();
 					redirect('admin/rumahibadah');
 					$this->session->set_flashdata('statusMessage', alert('success', 'Data berhasil diperbarui'));
