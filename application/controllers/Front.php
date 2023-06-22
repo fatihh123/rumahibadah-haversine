@@ -13,17 +13,17 @@ class Front extends CI_Controller
 	}
 	/**
 	 * index
-	 * menampilkan data gunung
+	 * menampilkan data rumahibadah
 	 * @return void
 	 */
-	public function hotel()
+	public function rumahibadah()
 	{
 		$jumlah_data = $this->NodeModel->countObject();
 
 		$this->load->library('pagination');
-		$config['base_url'] = site_url() . 'gunung/';
+		$config['base_url'] = site_url() . 'rumahibadah/';
 		$config['total_rows'] = $jumlah_data;
-		$config['per_page'] = 50;
+		$config['per_page'] = 150;
 		// Membuat Style pagination untuk BootStrap v4
 		$config['first_link']       = 'Awal';
 		$config['last_link']        = 'Akhir';
@@ -46,20 +46,20 @@ class Front extends CI_Controller
 		$from = $this->uri->segment(2);
 		$this->pagination->initialize($config);
 		$data = array(
-			'title' => 'Gunung',
+			'title' => 'rumahibadah',
 			'objectResult' => $this->NodeModel->getObjectsOffset($config['per_page'], $from)
 
 		);
-		$this->load->view('front/hotel', $data);
+		$this->load->view('front/rumahibadah', $data);
 	}
-	public function detailHotel($id)
+	public function detailrumahibadah($id)
 	{
 		$data = array(
-			'title' => 'Hotel',
+			'title' => 'rumahibadah',
 			'objectRow' => $this->NodeModel->getById($id)
 
 		);
-		$this->load->view('front/detailHotel', $data);
+		$this->load->view('front/detailrumahibadah', $data);
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Front extends CI_Controller
 		$this->load->library('pagination');
 		$config['base_url'] = site_url() . 'galeri/';
 		$config['total_rows'] = $jumlah_data;
-		$config['per_page'] = 50;
+		$config['per_page'] = 150;
 		// Membuat Style pagination untuk BootStrap v4
 		$config['first_link']       = 'Awal';
 		$config['last_link']        = 'Akhir';

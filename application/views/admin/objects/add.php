@@ -39,7 +39,7 @@ video {
 					<div class="page-content-wrapper">
 						<div class="mt-3">
 
-							<h3 class=""><strong>Tambah  Rumah Ibadah </strong></h3>
+							<h3 class=""><strong>Tambah  Rumah Ibadah</strong></h3>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
@@ -94,7 +94,7 @@ video {
   </div>
 												<div class="form-group mt-3">
 													<a href="<?= site_url('admin/rumahibadah') ?>" class="btn btn-light">Kembali</a>
-													<button class="btn btn-primary">Simpan</button>
+													<button class="btn btn-primary" type="submit">Simpan</button>
 												</div>
 
 											</form>
@@ -229,7 +229,7 @@ function captureImage() {
   context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
   // Ubah gambar ke data URL
-  const imageData = canvas.toDataURL('image/png');
+  const imageData = canvas.toDataURL('uploads');
 
   // Buat objek Blob dari data gambar
   const blob = dataURItoBlob(imageData);

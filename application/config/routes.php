@@ -32,9 +32,9 @@ $route['admin/user/ajax/list'] = 'User/ajaxlist';
 
 #user
 $route['dashboard'] = 'Dashboard';
-$route['rumahibadah'] = 'Front/hotel';
-$route['rumahibadah/(:num)'] = 'Front/hotel/$1';
-$route['rumahibadah/detail/(:num)'] = 'Front/detailHotel/$1';
+$route['rumahibadah'] = 'Front/rumahibadah';
+$route['rumahibadah/(:num)'] = 'Front/rumahibadah/$1';
+$route['rumahibadah/detail/(:num)'] = 'Front/detailrumahibadah/$1';
 $route['galeri'] = 'Front/galeri';
 $route['haversine'] = 'Front/djikstra';
 $route['djikstra2'] = 'Front/djikstra2';

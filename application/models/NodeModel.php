@@ -28,8 +28,8 @@ class NodeModel extends CI_Model
 			'lat' => $_POST['lat'],
 			'lng' => $_POST['lng'],
 			'desc' => $_POST['desc'],
-			'picture' => $_POST['picture'],
-			'type' => $_POST['type'],
+			'picture' => $_POST['capturedImage'],
+			//'type' => $_POST['type'],
 		));
 	}
 
@@ -109,7 +109,7 @@ class NodeModel extends CI_Model
 	 */
 	public function countObject()
 	{
-		$this->db->where('type', 'object');
+		//$this->db->where('type', 'object');
 		$this->db->from($this->tb_);
 		return $this->db->count_all_results();
 	}

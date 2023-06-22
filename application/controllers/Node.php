@@ -119,7 +119,7 @@ class Node extends CI_Controller
 	public function ajaxlist()
 	{
 		$datatables = new Datatables(new CodeigniterAdapter);
-		$datatables->query('SELECT id,name,lat,lng FROM node WHERE type = "-"');
+		$datatables->query('SELECT id,name,lat,lng FROM node');
 		$datatables->hide('id');
 		$datatables->add('aksi', function ($data) {
 			return '<a href="' . site_url('admin/node/edit/' . $data['id']) . '" class="btn btn-primary"><i class="dripicons-document-edit"></i></a>&nbsp;<a href="#" onclick="deleteData(' . $data['id'] . ')" class="btn btn-danger"><i class="dripicons-trash"></i></a>';
@@ -131,7 +131,7 @@ class Node extends CI_Controller
 	{
 		$config['upload_path']          = './uploads/';
 		$config['allowed_types']        = 'gif|jpg|png';
-		$config['max_size']             = 100;
+		$config['max_size']             = 150;
 		$config['encrypt_name']             = true;
 
 		$this->load->library('upload', $config);
