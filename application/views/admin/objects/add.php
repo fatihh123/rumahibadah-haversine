@@ -225,22 +225,50 @@ const context = canvas.getContext('2d');
 const fileInput = document.getElementById('userfile');
 
 function captureImage() {
-  // Gambar video ke elemen canvas
+  // Get the video element and canvas element
+  const video = document.getElementById('video');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+
+  // Draw the video onto the canvas
   context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-  // Ubah gambar ke data URL
-  const imageData = canvas.toDataURL('uploads');
+  // Convert the image to a data URL
+  const imageData = canvas.toDataURL('image/png');
 
-  // Buat objek Blob dari data gambar
+  // Convert the data URL to a Blob object
   const blob = dataURItoBlob(imageData);
 
-  // Buat objek File dari objek Blob
+  // Create a File object from the Blob object
   const file = new File([blob], 'image.png', { type: 'image/png' });
 
-  // Simpan file dalam elemen input file
+  // Create a DataTransfer object
+  const dataTransfer = new DataTransfer();
+
+  // Add the file to the DataTransfer object
+  dataTransfer.items.add(file);
+
+  // Set the files property of the capturedImageInput element
   const capturedImageInput = document.getElementById('capturedImage');
-  capturedImageInput.files = [file];
+  capturedImageInput.files = dataTransfer.files;
+
+  console.log(capturedImageInput.files);
 }
+
+// Helper function to convert data URL to Blob
+function dataURItoBlob(dataURI) {
+  const byteString = atob(dataURI.split(',')[1]);
+  const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+  const ab = new ArrayBuffer(byteString.length);
+  const ia = new Uint8Array(ab);
+  for (let i = 0; i < byteString.length; i++) {
+    ia[i] = byteString.charCodeAt(i);
+  }
+  return new Blob([ab], { type: mimeString });
+}
+
+
+
 
 // ...
 
