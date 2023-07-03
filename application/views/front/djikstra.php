@@ -172,7 +172,7 @@
 						<img src="<?= base_url('uploads/') ?>${i.picture}" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">${i.name}</h5>
-							<a href="<?= site_url('hotel/detail/') ?>${i.id}" class="btn btn-primary">Lihat detail</a>
+							<a href="<?= site_url('rumahibadah/detail/') ?>${i.id}" class="btn btn-primary">Lihat detail</a>
 						</div>
 						</div>
 						`)) // tambahkan munculan
@@ -372,6 +372,36 @@
         }
     }
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+	// Haversine
+	function haversineDistance(lat1, lon1, lat2, lon2) {
+    const toRadians = (degree) => (degree * Math.PI) / 180;
+    const R = 6371; // Radius of the Earth in kilometers
+
+    const dLat = toRadians(lat2 - lat1);
+    const dLon = toRadians(lon2 - lon1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRadians(lat1)) *
+        Math.cos(toRadians(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c;
+
+    return distance; // Distance in kilometers
+  }
+
+  // Time 
+  function calculateEstimatedTime(distance, speed) {
+    const timeInHours = distance / speed;
+    const minutes = timeInHours * 60;
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = Math.round(minutes % 60);
+
+    return { hours, minutes: remainingMinutes };
+  }
+
 	</script>
 </body>
 
